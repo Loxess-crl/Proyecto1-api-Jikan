@@ -5,12 +5,15 @@
 const mainContainer = document.querySelector('#container');
 const btnLoadContent = document.querySelector('#mascontenido');
 const containerBtn = document.querySelector('.container__button-hide');
+const SearchBtn = document.querySelector('#busc');
 
-let URL = 'https://api.jikan.moe/v3/search/anime?q=clannad&limit=7';
 
 /* Request Function */
 
-const Request = async (url, callback) => {
+const Request = async (callback) => {
+    let titulo = document.getElementById('aname').value;
+    let url = `https://api.jikan.moe/v3/search/anime?q=${titulo}&limit=7`;
+
     try{
         let response = await fetch(url);
             response = await response.json();
@@ -21,6 +24,7 @@ const Request = async (url, callback) => {
         throw new Error(error);
     } 
 }
+
 
 function displayData({results}) {
  
@@ -48,4 +52,4 @@ function displayData({results}) {
 }
 
 /* Event Lsiteners */
-btnLoadContent.addEventListener('click',() => Request(URL, displayData));;
+SearchBtn.addEventListener('click',() => Request(displayData));;
