@@ -3,16 +3,14 @@
 /* Elements */
 
 const mainContainer = document.querySelector('#container');
-const btnLoadContent = document.querySelector('#mascontenido');
-const containerBtn = document.querySelector('.container__button-hide');
 const SearchBtn = document.querySelector('#busc');
 
 
 /* Request Function */
 
 const Request = async (callback) => {
-    let titulo = document.getElementById('aname').value;
-    let url = `https://api.jikan.moe/v3/search/anime?q=${titulo}&limit=7`;
+    let titulo = document.getElementById('nombreAnime').value;
+    let url = `https://api.jikan.moe/v3/search/anime?q=${titulo}&limit=6`;
 
     try{
         let response = await fetch(url);
@@ -28,7 +26,7 @@ const Request = async (callback) => {
 
 function displayData({results}) {
  
-    containerBtn.style.display = 'none';
+    mainContainer.innerHTML = ' ';
 
     results.forEach( anime => {
 

@@ -1,21 +1,10 @@
-*{
-    margin: 0;
-    padding: 0;
-    
-}
 
-html{
-    box-sizing: border-box;
-}
-
-body{
-background: #262626;
-font-family: sans-serif;
+.tit{
+    font-family: 'Lobster', cursive;
 }
 
 .container{
     width: 1280px;
-    /* width: 100%; */
     margin:  70px auto 0;
     display: flex;
     flex-wrap: wrap;
@@ -67,11 +56,6 @@ font-family: sans-serif;
     }
 } 
 
-/* Nota
-primero se creo un div contenedoe de todas las box hijas
-luego ajustamos la imagen con una altura establecida y object-fit/object-position
-despues agregamos una transicicion a la imagen para despues en el hover de la box que la contiene agrandarla
-y con un overflow: hidden; evitamos que se expanda fuera de su container y medida establecida haviedo efecto zoom  */
 
 .container .box .imgbox{
     position: relative;
