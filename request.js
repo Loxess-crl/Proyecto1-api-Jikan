@@ -31,17 +31,15 @@ function displayData({results}) {
     results.forEach( anime => {
 
         const animeCard = `
-        <div class="box">
-            <div class="imgbox">
-                <img src="${anime.image_url}" alt="imagen">
-            </div>
-            <div class="details">
-                <div class="content" id="content">
-                    <h2>${anime.title}</h2>
-                    <p>${anime.synopsis}</p>
+
+        <div class="col-lg-4 d-block justify-content-start my-2 icono-wrap">
+                <img src="${anime.image_url}"
+                    alt="img" class="imag">
+                <div>
+                    <h3 class="fs-5 mt-4 px-2 pb-1">${anime.title}</h3>
+                    <p class="px-4">${anime.synopsis}</p>
                 </div>
             </div>
-        </div>
         `;
 
         mainContainer.innerHTML += animeCard;
